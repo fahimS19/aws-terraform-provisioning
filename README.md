@@ -123,39 +123,15 @@ are generated locally and should not be committed.
 
 ## AWS services used
 
-Service Purpose Cost/safety approach
-
----
-
-Amazon S3 Artifact/configuration Public access blocked;
-bucket lifecycle rule is
-optional
-
-Amazon DynamoDB Configuration/metadata `PAY_PER_REQUEST`
-table billing
-
-AWS IAM Role and least-privilege IAM itself has no
-example policy additional charge
-
-AWS Systems Manager Standard `String` Does not use Advanced
-Parameter Store parameters parameters
-
-Amazon CloudWatch Logs Application/worker log Short retention
-groups configured by
-environment
-
-Amazon VPC Security Example network access Security group creation
-Groups rules has no direct hourly
-charge
-
-Amazon EC2 Optional test instance Disabled by default; do
-not enable for this
-assignment
-
----
-
-No NAT Gateway, Application/Network Load Balancer, RDS, EKS, OpenSearch,
-or Elastic IP is provisioned by this project.
+| Service                 | Purpose                                 | Cost/Safety Approach                                                                   |
+| :---------------------- | :-------------------------------------- | :------------------------------------------------------------------------------------- |
+| **Amazon S3**           | Artifact/configuration bucket           | Public access blocked; lifecycle rule is optional.                                     |
+| **Amazon DynamoDB**     | Configuration/metadata table            | `PAY_PER_REQUEST` billing to eliminate idle capacity costs.                            |
+| **AWS IAM**             | Role and least-privilege example policy | IAM is natively free; no additional charge.                                            |
+| **AWS Systems Manager** | Standard `String` parameters            | Avoids "Advanced" parameters to prevent extra charges.                                 |
+| **Amazon CloudWatch**   | Application/worker log groups           | Short retention configured by environment to minimize storage fees.                    |
+| **Amazon VPC**          | Example network access rules            | Security group creation incurs no direct hourly charge.                                |
+| **Amazon EC2**          | Optional test instance                  | **Disabled by default;** do not enable for this assignment to prevent compute charges. |
 
 ## Environment strategy
 
