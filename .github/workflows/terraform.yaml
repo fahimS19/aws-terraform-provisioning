@@ -1,0 +1,26 @@
+name: Terraform CI Pipeline
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  terraform-checks:
+    name: Format and Validate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Check formatting
+        run: terraform fmt -check -recursive
+
+      - name: Initialize Terraform
+        run: terraform init -backend=false
+
+      - name: Validate configuration
+        run: terraform validate
