@@ -1,0 +1,552 @@
+data.aws_vpc.default: Reading...
+data.aws_iam_policy_document.ec2_assume_role: Reading...
+data.aws_ami.amazon_linux: Reading...
+data.aws_caller_identity.current: Reading...
+aws_cloudwatch_log_group.app["app"]: Refreshing state... [id=bjit-tfassign-dev-fahim30246-app-logs-use1]
+aws_cloudwatch_log_group.app["worker"]: Refreshing state... [id=bjit-tfassign-dev-fahim30246-worker-logs-use1]
+aws_ssm_parameter.app["feature_flag"]: Refreshing state... [id=bjit-tfassign-dev-fahim30246-feature_flag-logs-use1]
+aws_ssm_parameter.app["app_name"]: Refreshing state... [id=bjit-tfassign-dev-fahim30246-app_name-logs-use1]
+aws_ssm_parameter.app["log_level"]: Refreshing state... [id=bjit-tfassign-dev-fahim30246-log_level-logs-use1]
+data.aws_iam_policy_document.ec2_assume_role: Read complete after 0s [id=2851119427]
+aws_s3_bucket.app: Refreshing state... [id=bjit-tfassign-dev-fahim30246-app-bucket-use1]
+aws_dynamodb_table.config[0]: Refreshing state... [id=bjit-tfassign-dev-fahim30246-config-table-use1]
+data.aws_caller_identity.current: Read complete after 0s [id=072262450408]
+aws_iam_role.app[0]: Refreshing state... [id=bjit-tfassign-dev-fahim30246-app-role-use1]
+data.aws_ami.amazon_linux: Read complete after 2s [id=ami-04b938437b69a2c9c]
+data.aws_vpc.default: Read complete after 3s [id=vpc-0d2e39dba8bba30f9]
+aws_security_group.app: Refreshing state... [id=sg-08d19acd587c8b988]
+data.aws_iam_policy_document.app_access: Reading...
+data.aws_iam_policy_document.app_access: Read complete after 0s [id=617599309]
+aws_iam_policy.app_access[0]: Refreshing state... [id=arn:aws:iam::072262450408:policy/bjit-tfassign-dev-fahim30246-app-policy-use1]
+aws_iam_role_policy_attachment.app_access[0]: Refreshing state... [id=bjit-tfassign-dev-fahim30246-app-role-use1-20261027080223263000000001]
+aws_s3_bucket_versioning.app: Refreshing state... [id=bjit-tfassign-dev-fahim30246-app-bucket-use1]
+aws_s3_bucket_ownership_controls.app: Refreshing state... [id=bjit-tfassign-dev-fahim30246-app-bucket-use1]
+aws_s3_bucket_public_access_block.app: Refreshing state... [id=bjit-tfassign-dev-fahim30246-app-bucket-use1]
+aws_s3_bucket_lifecycle_configuration.app[0]: Refreshing state... [id=bjit-tfassign-dev-fahim30246-app-bucket-use1]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # aws_cloudwatch_log_group.app["app"] will be destroyed
+  - resource "aws_cloudwatch_log_group" "app" {
+      - arn               = "arn:aws:logs:us-east-1:072262450408:log-group:bjit-tfassign-dev-fahim30246-app-logs-use1" -> null
+      - id                = "bjit-tfassign-dev-fahim30246-app-logs-use1" -> null
+      - log_group_class   = "STANDARD" -> null
+      - name              = "bjit-tfassign-dev-fahim30246-app-logs-use1" -> null
+      - retention_in_days = 7 -> null
+      - skip_destroy      = false -> null
+      - tags              = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+      - tags_all          = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+        # (2 unchanged attributes hidden)
+    }
+
+  # aws_cloudwatch_log_group.app["worker"] will be destroyed
+  - resource "aws_cloudwatch_log_group" "app" {
+      - arn               = "arn:aws:logs:us-east-1:072262450408:log-group:bjit-tfassign-dev-fahim30246-worker-logs-use1" -> null
+      - id                = "bjit-tfassign-dev-fahim30246-worker-logs-use1" -> null
+      - log_group_class   = "STANDARD" -> null
+      - name              = "bjit-tfassign-dev-fahim30246-worker-logs-use1" -> null
+      - retention_in_days = 7 -> null
+      - skip_destroy      = false -> null
+      - tags              = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+      - tags_all          = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+        # (2 unchanged attributes hidden)
+    }
+
+  # aws_dynamodb_table.config[0] will be destroyed
+  - resource "aws_dynamodb_table" "config" {
+      - arn                         = "arn:aws:dynamodb:us-east-1:072262450408:table/bjit-tfassign-dev-fahim30246-config-table-use1" -> null
+      - billing_mode                = "PAY_PER_REQUEST" -> null
+      - deletion_protection_enabled = false -> null
+      - hash_key                    = "id" -> null
+      - id                          = "bjit-tfassign-dev-fahim30246-config-table-use1" -> null
+      - name                        = "bjit-tfassign-dev-fahim30246-config-table-use1" -> null
+      - read_capacity               = 0 -> null
+      - stream_enabled              = false -> null
+      - table_class                 = "STANDARD" -> null
+      - tags                        = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+      - tags_all                    = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+      - write_capacity              = 0 -> null
+        # (3 unchanged attributes hidden)
+
+      - attribute {
+          - name = "id" -> null
+          - type = "S" -> null
+        }
+
+      - point_in_time_recovery {
+          - enabled                 = false -> null
+          - recovery_period_in_days = 0 -> null
+        }
+
+      - ttl {
+          - enabled        = false -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # aws_iam_policy.app_access[0] will be destroyed
+  - resource "aws_iam_policy" "app_access" {
+      - arn              = "arn:aws:iam::072262450408:policy/bjit-tfassign-dev-fahim30246-app-policy-use1" -> null
+      - attachment_count = 1 -> null
+      - id               = "arn:aws:iam::072262450408:policy/bjit-tfassign-dev-fahim30246-app-policy-use1" -> null
+      - name             = "bjit-tfassign-dev-fahim30246-app-policy-use1" -> null
+      - path             = "/" -> null
+      - policy           = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action   = [
+                          - "ssm:GetParameters",
+                          - "ssm:GetParameter",
+                        ]
+                      - Effect   = "Allow"
+                      - Resource = "arn:aws:ssm:us-east-1:072262450408:parameter/tfassign/dev/*"
+                      - Sid      = "ReadApplicationParameters"
+                    },
+                  - {
+                      - Action   = [
+                          - "dynamodb:UpdateItem",
+                          - "dynamodb:PutItem",
+                          - "dynamodb:GetItem",
+                        ]
+                      - Effect   = "Allow"
+                      - Resource = "arn:aws:dynamodb:us-east-1:072262450408:table/bjit-tfassign-dev-fahim30246-config-table-use1"
+                      - Sid      = "AccessConfigurationTable"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - policy_id        = "ANPARBUZNPTUGZX4FHBZY" -> null
+      - tags             = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+      - tags_all         = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+        # (2 unchanged attributes hidden)
+    }
+
+  # aws_iam_role.app[0] will be destroyed
+  - resource "aws_iam_role" "app" {
+      - arn                   = "arn:aws:iam::072262450408:role/bjit-tfassign-dev-fahim30246-app-role-use1" -> null
+      - assume_role_policy    = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "sts:AssumeRole"
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "ec2.amazonaws.com"
+                        }
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> null
+      - create_date           = "2026-10-27T08:02:11Z" -> null
+      - force_detach_policies = false -> null
+      - id                    = "bjit-tfassign-dev-fahim30246-app-role-use1" -> null
+      - managed_policy_arns   = [
+          - "arn:aws:iam::072262450408:policy/bjit-tfassign-dev-fahim30246-app-policy-use1",
+        ] -> null
+      - max_session_duration  = 3600 -> null
+      - name                  = "bjit-tfassign-dev-fahim30246-app-role-use1" -> null
+      - path                  = "/" -> null
+      - tags                  = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+      - tags_all              = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+      - unique_id             = "AROARBUZNPTUJPK7FFRKL" -> null
+        # (3 unchanged attributes hidden)
+    }
+
+  # aws_iam_role_policy_attachment.app_access[0] will be destroyed
+  - resource "aws_iam_role_policy_attachment" "app_access" {
+      - id         = "bjit-tfassign-dev-fahim30246-app-role-use1-20261027080223263000000001" -> null
+      - policy_arn = "arn:aws:iam::072262450408:policy/bjit-tfassign-dev-fahim30246-app-policy-use1" -> null
+      - role       = "bjit-tfassign-dev-fahim30246-app-role-use1" -> null
+    }
+
+  # aws_s3_bucket.app will be destroyed
+  - resource "aws_s3_bucket" "app" {
+      - arn                         = "arn:aws:s3:::bjit-tfassign-dev-fahim30246-app-bucket-use1" -> null
+      - bucket                      = "bjit-tfassign-dev-fahim30246-app-bucket-use1" -> null
+      - bucket_domain_name          = "bjit-tfassign-dev-fahim30246-app-bucket-use1.s3.amazonaws.com" -> null
+      - bucket_regional_domain_name = "bjit-tfassign-dev-fahim30246-app-bucket-use1.s3.us-east-1.amazonaws.com" -> null
+      - force_destroy               = false -> null
+      - hosted_zone_id              = "Z3AQBSTGFYJSTF" -> null
+      - id                          = "bjit-tfassign-dev-fahim30246-app-bucket-use1" -> null
+      - object_lock_enabled         = false -> null
+      - region                      = "us-east-1" -> null
+      - request_payer               = "BucketOwner" -> null
+      - tags                        = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+      - tags_all                    = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+        # (3 unchanged attributes hidden)
+
+      - grant {
+          - id          = "b4d1beba1c6702a64ff2eda2e4463bb74c2987c9c6fd9aba916200b4f671c198" -> null
+          - permissions = [
+              - "FULL_CONTROL",
+            ] -> null
+          - type        = "CanonicalUser" -> null
+            # (1 unchanged attribute hidden)
+        }
+
+      - lifecycle_rule {
+          - abort_incomplete_multipart_upload_days = 0 -> null
+          - enabled                                = true -> null
+          - id                                     = "expire-old-objects" -> null
+          - tags                                   = {} -> null
+            # (1 unchanged attribute hidden)
+
+          - expiration {
+              - days                         = 7 -> null
+              - expired_object_delete_marker = false -> null
+                # (1 unchanged attribute hidden)
+            }
+        }
+
+      - server_side_encryption_configuration {
+          - rule {
+              - bucket_key_enabled = false -> null
+
+              - apply_server_side_encryption_by_default {
+                  - sse_algorithm     = "AES256" -> null
+                    # (1 unchanged attribute hidden)
+                }
+            }
+        }
+
+      - versioning {
+          - enabled    = false -> null
+          - mfa_delete = false -> null
+        }
+    }
+
+  # aws_s3_bucket_lifecycle_configuration.app[0] will be destroyed
+  - resource "aws_s3_bucket_lifecycle_configuration" "app" {
+      - bucket                                 = "bjit-tfassign-dev-fahim30246-app-bucket-use1" -> null
+      - id                                     = "bjit-tfassign-dev-fahim30246-app-bucket-use1" -> null
+      - transition_default_minimum_object_size = "all_storage_classes_128K" -> null
+        # (1 unchanged attribute hidden)
+
+      - rule {
+          - id     = "expire-old-objects" -> null
+          - status = "Enabled" -> null
+            # (1 unchanged attribute hidden)
+
+          - expiration {
+              - days                         = 7 -> null
+              - expired_object_delete_marker = false -> null
+            }
+
+          - filter {
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # aws_s3_bucket_ownership_controls.app will be destroyed
+  - resource "aws_s3_bucket_ownership_controls" "app" {
+      - bucket = "bjit-tfassign-dev-fahim30246-app-bucket-use1" -> null
+      - id     = "bjit-tfassign-dev-fahim30246-app-bucket-use1" -> null
+
+      - rule {
+          - object_ownership = "BucketOwnerEnforced" -> null
+        }
+    }
+
+  # aws_s3_bucket_public_access_block.app will be destroyed
+  - resource "aws_s3_bucket_public_access_block" "app" {
+      - block_public_acls       = true -> null
+      - block_public_policy     = true -> null
+      - bucket                  = "bjit-tfassign-dev-fahim30246-app-bucket-use1" -> null
+      - id                      = "bjit-tfassign-dev-fahim30246-app-bucket-use1" -> null
+      - ignore_public_acls      = true -> null
+      - restrict_public_buckets = true -> null
+    }
+
+  # aws_s3_bucket_versioning.app will be destroyed
+  - resource "aws_s3_bucket_versioning" "app" {
+      - bucket                = "bjit-tfassign-dev-fahim30246-app-bucket-use1" -> null
+      - id                    = "bjit-tfassign-dev-fahim30246-app-bucket-use1" -> null
+        # (1 unchanged attribute hidden)
+
+      - versioning_configuration {
+          - status     = "Suspended" -> null
+            # (1 unchanged attribute hidden)
+        }
+    }
+
+  # aws_security_group.app will be destroyed
+  - resource "aws_security_group" "app" {
+      - arn                    = "arn:aws:ec2:us-east-1:072262450408:security-group/sg-08d19acd587c8b988" -> null
+      - description            = "Security group for the Terraform assignment" -> null
+      - egress                 = [
+          - {
+              - cidr_blocks      = [
+                  - "0.0.0.0/0",
+                ]
+              - description      = "Allow outbound traffic"
+              - from_port        = 0
+              - ipv6_cidr_blocks = []
+              - prefix_list_ids  = []
+              - protocol         = "-1"
+              - security_groups  = []
+              - self             = false
+              - to_port          = 0
+            },
+        ] -> null
+      - id                     = "sg-08d19acd587c8b988" -> null
+      - ingress                = [] -> null
+      - name                   = "bjit-tfassign-dev-fahim30246-app-sg-use1" -> null
+      - owner_id               = "072262450408" -> null
+      - revoke_rules_on_delete = false -> null
+      - tags                   = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+      - tags_all               = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+      - vpc_id                 = "vpc-0d2e39dba8bba30f9" -> null
+        # (1 unchanged attribute hidden)
+    }
+
+  # aws_ssm_parameter.app["app_name"] will be destroyed
+  - resource "aws_ssm_parameter" "app" {
+      - arn             = "arn:aws:ssm:us-east-1:072262450408:parameter/bjit-tfassign-dev-fahim30246-app_name-logs-use1" -> null
+      - data_type       = "text" -> null
+      - id              = "bjit-tfassign-dev-fahim30246-app_name-logs-use1" -> null
+      - name            = "bjit-tfassign-dev-fahim30246-app_name-logs-use1" -> null
+      - tags            = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+      - tags_all        = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+      - tier            = "Standard" -> null
+      - type            = "String" -> null
+      - value           = (sensitive value) -> null
+      - value_wo        = (write-only attribute) -> null
+      - version         = 1 -> null
+        # (3 unchanged attributes hidden)
+    }
+
+  # aws_ssm_parameter.app["feature_flag"] will be destroyed
+  - resource "aws_ssm_parameter" "app" {
+      - arn             = "arn:aws:ssm:us-east-1:072262450408:parameter/bjit-tfassign-dev-fahim30246-feature_flag-logs-use1" -> null
+      - data_type       = "text" -> null
+      - id              = "bjit-tfassign-dev-fahim30246-feature_flag-logs-use1" -> null
+      - name            = "bjit-tfassign-dev-fahim30246-feature_flag-logs-use1" -> null
+      - tags            = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+      - tags_all        = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+      - tier            = "Standard" -> null
+      - type            = "String" -> null
+      - value           = (sensitive value) -> null
+      - value_wo        = (write-only attribute) -> null
+      - version         = 1 -> null
+        # (3 unchanged attributes hidden)
+    }
+
+  # aws_ssm_parameter.app["log_level"] will be destroyed
+  - resource "aws_ssm_parameter" "app" {
+      - arn             = "arn:aws:ssm:us-east-1:072262450408:parameter/bjit-tfassign-dev-fahim30246-log_level-logs-use1" -> null
+      - data_type       = "text" -> null
+      - id              = "bjit-tfassign-dev-fahim30246-log_level-logs-use1" -> null
+      - name            = "bjit-tfassign-dev-fahim30246-log_level-logs-use1" -> null
+      - tags            = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+      - tags_all        = {
+          - "Company"     = "bjit"
+          - "CostCenter"  = "training"
+          - "Environment" = "dev"
+          - "ManagedBy"   = "Terraform"
+          - "Owner"       = "fahim30246"
+          - "Project"     = "tfassign"
+        } -> null
+      - tier            = "Standard" -> null
+      - type            = "String" -> null
+      - value           = (sensitive value) -> null
+      - value_wo        = (write-only attribute) -> null
+      - version         = 1 -> null
+        # (3 unchanged attributes hidden)
+    }
+
+Plan: 0 to add, 0 to change, 15 to destroy.
+
+Changes to Outputs:
+  - cloudwatch_log_group_names = [
+      - "app",
+      - "worker",
+    ] -> null
+  - dynamodb_table_name        = "bjit-tfassign-dev-fahim30246-config-table-use1" -> null
+  - iam_role_arn               = "arn:aws:iam::072262450408:role/bjit-tfassign-dev-fahim30246-app-role-use1" -> null
+  - s3_bucket_arn              = "arn:aws:s3:::bjit-tfassign-dev-fahim30246-app-bucket-use1" -> null
+  - s3_bucket_name             = "bjit-tfassign-dev-fahim30246-app-bucket-use1" -> null
+  - security_group_id          = "sg-08d19acd587c8b988" -> null
+  - ssm_parameter_names        = [
+      - "app_name",
+      - "feature_flag",
+      - "log_level",
+    ] -> null
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: 
+aws_s3_bucket_versioning.app: Destroying... [id=bjit-tfassign-dev-fahim30246-app-bucket-use1]
+aws_iam_role_policy_attachment.app_access[0]: Destroying... [id=bjit-tfassign-dev-fahim30246-app-role-use1-20261027080223263000000001]
+aws_s3_bucket_ownership_controls.app: Destroying... [id=bjit-tfassign-dev-fahim30246-app-bucket-use1]
+aws_ssm_parameter.app["feature_flag"]: Destroying... [id=bjit-tfassign-dev-fahim30246-feature_flag-logs-use1]
+aws_cloudwatch_log_group.app["app"]: Destroying... [id=bjit-tfassign-dev-fahim30246-app-logs-use1]
+aws_security_group.app: Destroying... [id=sg-08d19acd587c8b988]
+aws_cloudwatch_log_group.app["worker"]: Destroying... [id=bjit-tfassign-dev-fahim30246-worker-logs-use1]
+aws_ssm_parameter.app["log_level"]: Destroying... [id=bjit-tfassign-dev-fahim30246-log_level-logs-use1]
+aws_ssm_parameter.app["app_name"]: Destroying... [id=bjit-tfassign-dev-fahim30246-app_name-logs-use1]
+aws_s3_bucket_lifecycle_configuration.app[0]: Destroying... [id=bjit-tfassign-dev-fahim30246-app-bucket-use1]
+aws_s3_bucket_versioning.app: Destruction complete after 1s
+aws_s3_bucket_public_access_block.app: Destroying... [id=bjit-tfassign-dev-fahim30246-app-bucket-use1]
+aws_iam_role_policy_attachment.app_access[0]: Destruction complete after 2s
+aws_iam_role.app[0]: Destroying... [id=bjit-tfassign-dev-fahim30246-app-role-use1]
+aws_cloudwatch_log_group.app["app"]: Destruction complete after 2s
+aws_cloudwatch_log_group.app["worker"]: Destruction complete after 2s
+aws_ssm_parameter.app["feature_flag"]: Destruction complete after 2s
+aws_iam_policy.app_access[0]: Destroying... [id=arn:aws:iam::072262450408:policy/bjit-tfassign-dev-fahim30246-app-policy-use1]
+aws_ssm_parameter.app["app_name"]: Destruction complete after 2s
+aws_ssm_parameter.app["log_level"]: Destruction complete after 2s
+aws_s3_bucket_lifecycle_configuration.app[0]: Destruction complete after 2s
+aws_s3_bucket_public_access_block.app: Destruction complete after 1s
+aws_s3_bucket_ownership_controls.app: Destruction complete after 3s
+aws_security_group.app: Destruction complete after 3s
+aws_s3_bucket.app: Destroying... [id=bjit-tfassign-dev-fahim30246-app-bucket-use1]
+aws_iam_role.app[0]: Destruction complete after 1s
+aws_iam_policy.app_access[0]: Destruction complete after 1s
+aws_dynamodb_table.config[0]: Destroying... [id=bjit-tfassign-dev-fahim30246-config-table-use1]
+aws_s3_bucket.app: Destruction complete after 0s
+aws_dynamodb_table.config[0]: Destruction complete after 9s
+
+Destroy complete! Resources: 15 destroyed.

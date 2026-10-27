@@ -1,0 +1,14 @@
+cloudwatch_log_group_names = [
+  "app",
+  "worker",
+]
+dynamodb_table_name = "bjit-tfassign-dev-fahim30246-config-table-use1"
+iam_role_arn = "arn:aws:iam::072262450408:role/bjit-tfassign-dev-fahim30246-app-role-use1"
+s3_bucket_arn = "arn:aws:s3:::bjit-tfassign-dev-fahim30246-app-bucket-use1"
+s3_bucket_name = "bjit-tfassign-dev-fahim30246-app-bucket-use1"
+security_group_id = "sg-08d19acd587c8b988"
+ssm_parameter_names = [
+  "app_name",
+  "feature_flag",
+  "log_level",
+]
